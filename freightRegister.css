@@ -62,7 +62,6 @@ table#freightRegister th, td {
     font-size: 30px;
 }
 #search {
-    float: right;
 }
 
 #mainContent{
@@ -102,7 +101,7 @@ table.newRepairTable {
 #displayFilter {
     display: inline;
     float: left;
-    width: 75%;
+    width: 65%;
 
 }
 #displayControl {
@@ -123,8 +122,8 @@ table.newRepairTable {
 }
 #pageDiv {
     width: 10%;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 .mobileTitle{
 	width: 100%;

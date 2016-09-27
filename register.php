@@ -56,7 +56,7 @@
         }
         ?>
 <!--- Displays the Choosers for display priority --->
-        <form id='displayFilter' action='index.php' method='get' onchange='change()' display='inline'>
+        <form id='displayFilter' action='index.php' method='get' onchange='change()'>
         <input type="hidden" name=page value='<?php echo $page; ?>'>
         <select name='order'>
             <option value='normal' <?php echo $normalOrder; ?> >OldestFirst</option>
@@ -71,8 +71,8 @@
         </select>
         <button type='submit' name='page' value='<?php echo $page + 1; ?>'>Next Page</button>
         </form>
-        <div id='search' float='right'>
-            <form action='search.php' method='post' display='inline'>
+        <div id='search'>
+            <form action='search.php' method='post'>
                 <input type='text' name='searchQuery'><input type='submit' value='Search'>
             </form>
         </div>
@@ -96,4 +96,4 @@ if($queryMethod == 'search'){
         }
         ?>
 </table>
-
+</div>

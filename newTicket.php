@@ -25,11 +25,14 @@
 <tr><td><input type='text' size='50' name='reference'></td><td><input type='text' size='50' name='contact'></td></tr>
 <tr><td></td><td></td></tr>
 </table>
+
+<input type="submit" value="Submit">
+</form>
+
 </div>
 
 <div id="footNav">
-<input type="submit" value="Submit">
-</form>
+
 </div>
 
 </body>
