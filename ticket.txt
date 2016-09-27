@@ -1,0 +1,10 @@
+create table freight (
+freightID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+freightTicket VARCHAR(20), 
+destination VARCHAR(100), 
+consignment VARCHAR(500), 
+contact VARCHAR(100), 
+date DATE);
+
+
+Example FreightTicket Value: 2TPBSB 0141935311
