@@ -103,6 +103,7 @@ table.newRepairTable {
     display: inline;
     float: left;
     width: 75%;
+
 }
 #displayControl {
     height: 40px;
@@ -125,3 +126,21 @@ table.newRepairTable {
     margin-right: 10%;
     margin-left: 10%;
 }
+.mobileTitle{
+	width: 100%;
+	font-size:75px;
+	font-weight: bold;
+	background-color: #99ccff;
+}
+input.mobile {
+	height: 1.5em;
+	width: 10em;
+	font-size:5em;
+}
+textarea.mobile {
+	height: 3em;
+	width: 13.5em;
+	font-size:5em;
+}
+
+

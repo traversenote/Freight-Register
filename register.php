@@ -4,12 +4,13 @@
 <!---This section handles display control information. Display order, etc.--->
     <div id='displayControl'>
         <?php
-        $page = test_input($_GET['page']);
-        if($page <= 0){ $page=1; }
-        $displayNum = test_input($_GET['displayNum']);
-        $displayFilter = test_input($_GET['display']);
-        $displayOrder = test_input($_GET['order']);
+
         if(isset($_GET['order'])){
+        	$page = test_input($_GET['page']);
+        	if($page <= 0){ $page=1; }
+        	$displayNum = test_input($_GET['displayNum']);
+        	$displayFilter = test_input($_GET['display']);
+        	$displayOrder = test_input($_GET['order']);
             $displayNum = test_input($_GET['displayNum']);
             $displayFilter = test_input($_GET['display']);
             $displayOrder = test_input($_GET['order']);
