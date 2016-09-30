@@ -14,7 +14,7 @@ include 'functions.php';
 $date = date("Y-m-d");
 $allowNew="yes";
 $validTicketFormat='/[0-9][A-Z]{5,6}\ +[0-9]{10}/';
-$validCleanTicket='/[A-Z]{2,3}\ +[0-9]{10}/';
+$validCleanTicket='/[A-Z]{2,3}\ +[0-9]{8}/';
 
 /*
 if(isset($_GET['source'])){
@@ -34,7 +34,7 @@ if(isset($_GET["source"]) && isset($_GET["ticket"]) && $allowNew == "yes"){
 	if(!preg_match($validTicketFormat, $ticket)){
 		echo $ticket;
 	}else{
-		$ticket = substr($ticket, 4, 17);
+		$ticket = substr($ticket, 4, 12);
 
 		$query = "SELECT * from freight where freightTicket='$ticket'";
 		$result = $conn->query($query);

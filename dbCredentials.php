@@ -1,10 +1,9 @@
 <?php
 // Credentials for connecting to the Database
-
 $servername = "localhost";
-$username = "testuser";
-$password = "password";
-$dbname = "test";
+$username = "freightApp";
+$password = "wellingtonFreight";
+$dbname = "freight";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
