@@ -56,12 +56,11 @@ $trackingURL = "http://www.posthaste.co.nz/phl/servlet/ITNG_TAndTServlet?page=1&
 <tr><td><?php echo "<input type='text' size='50' name='reference' value='".$reference."'>"; ?></td><td><input type='text' size='50' name='contact' value='<?php echo $contact; ?>'></td></tr>
 <tr><td></td><td></td></tr>
 </table>
+</div>
 
+<div id="footNav">
 <input type="submit" value="Submit">
 </form>
-</div>
-<div id="footNav">
-
 </div>
 
 </body>
