@@ -15,7 +15,7 @@ $searchQuery = test_input($_POST['searchQuery']);
 
 $queryMethod = 'search';
 
-require 'register.php';
+require 'includes/register.php';
 
 
 ?>

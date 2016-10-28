@@ -1,3 +1,4 @@
+<?php
 $tType = test_input($_POST["tType"]);
 $tNumber = test_input($_POST["tNumber"]);
 $destination = test_input($_POST["destination"]);
@@ -23,3 +24,4 @@ if($result->num_rows >= 1 ){
 		echo "Problem here boss:". $sql. "<br>". $conn->error;
 	}
 }
+?>

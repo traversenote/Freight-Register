@@ -9,13 +9,11 @@
 include 'dbCredentials.php';
 include 'functions.php';
 
-
-
 if($_GET["ticket"]) {
     $record = $_GET["ticket"];
 
     $query = "SELECT * FROM freight WHERE freightID=$record";
-    $result = $conn->query($query);
+    $result = $freightdb->query($query);
     
     while($row = $result->fetch_assoc()) {
         $freightID = $row["freightID"];
@@ -41,7 +39,6 @@ $trackingURL = "http://www.posthaste.co.nz/phl/servlet/ITNG_TAndTServlet?page=1&
 <div id='topNav'><a href='index.php'>Freight Register Home</a> | <a href='newTicket.php'>New Ticket</a></div>
 <div id='titleBar'>The Listening Post Freight Register</div>
 <div id='mainContent'>
-<!--- Displays the Choosers for display priority --->
 
 <form action="index.php?action=update&ticket=<?php echo $freightID ?>" method="post">
 <table id="ticket">
@@ -56,9 +53,7 @@ $trackingURL = "http://www.posthaste.co.nz/phl/servlet/ITNG_TAndTServlet?page=1&
 <tr><td><?php echo "<input type='text' size='50' name='reference' value='".$reference."'>"; ?></td><td><input type='text' size='50' name='contact' value='<?php echo $contact; ?>'></td></tr>
 <tr><td></td><td></td></tr>
 </table>
-</div>
 
-<div id="footNav">
 <input type="submit" value="Submit">
 </form>
 </div>

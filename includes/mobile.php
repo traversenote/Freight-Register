@@ -7,7 +7,7 @@ if (isset($ticketCode[2])) {
 
 ?>
 
-<form action='index.php?action=createNew' method='post'>
+<form action='../index.php?action=createNew' method='post'>
 <!---?><input type='hidden' name='ticket' value='<?php #echo $ticket; ?>'> --->
 <input type='hidden' name='tType' value='<?php echo $ticketCode[0];?>'>
 <input type='hidden' name='tNumber' value='<?php echo $ticketCode[1]; ?>'>
@@ -20,3 +20,4 @@ if (isset($ticketCode[2])) {
 <div class='mobileTitle'><label for='contact'>Contact</label></div>
 <div><input class='mobile' type='text' name='contact' value='<?php echo $source; ?>'></div>
 <input class='mobile' type='submit' value='submit'>
+</form>
