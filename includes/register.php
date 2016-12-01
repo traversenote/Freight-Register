@@ -1,4 +1,4 @@
-<div id='topNav'><a href='index.php'>Freight Register Home</a> | <a href='../newTicket.php'>New Ticket</a></div>
+<div id='topNav'><a href='index.php'>Freight Register Home</a> | <a href='newTicket.php'>New Ticket</a></div>
 <div id='titleBar'>The Listening Post Freight Register</div>
 <div id='mainContent'>
 <!---This section handles display control information. Display order, etc.--->

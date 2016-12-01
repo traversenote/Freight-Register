@@ -1,9 +1,7 @@
 <?php
 
-function test_input($data, $length) {
-	if (!isset($length)){
-		$length = 100;
-	}
+function test_input($data) {
+	$length = 100;
 	if (strlen($data) > $length){
 		 $data=substr($data, 0, $length);
 	}

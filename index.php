@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
 <?php
 include 'dbCredentials.php';
 include 'functions.php';
@@ -30,7 +29,7 @@ if(isset($_GET["action"])){
 			break;
 		default:
 			$queryMethod = 'display';
-			require 'register.php';
+			require 'includes/register.php';
 	}
 }else{
 	$queryMethod = 'display';

@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <?php
-setcookie("testCookie['first']", "Blank", time() + (86400 * 30), "/");
-setcookie("testCookie['second']", "Not BLank");
+$lookie = array("one"=>"look", "two"=>"I have space", "three"=>"I am the third"); #Create an array
+setcookie("testCookie", serialize($lookie), time() + (86400 * 30), "/"); #serialize the array for storage
+
+#Another approach
+function cookie_encode($obj) {
+	$value = json_encode($obj);
+	$value = base64_encode($value);
+	return $value;
+}
+$second = array("one"=>"look", "two"=>"I have space", "three"=>"I am the third"); #Create an array
+$secondCookie= cookie_encode($second);
+setcookie("otherCookie", $secondCookie, time() + (86400 * 30), "/"); #serialize the array for storage
 ?>
 <html lang='en'>
 <head>
@@ -12,7 +22,18 @@ setcookie("testCookie['second']", "Not BLank");
 <body>
 Hello.
 <?php
-print $_COOKIE["testCookie"]["second"];
+$ticket=unserialize($_COOKIE["testCookie"]);
+print $ticket["one"];
+function cookie_decode($value) {
+	$value = base64_decode($value);
+	$value = json_decode($value, true);
+	return $value;
+}
+$seconds = cookie_decode($_COOKIE["otherCookie"]);
+$seconds2 = json_encode($lookie);
+print "</br>";
+
+var_dump($seconds2);
 ?>
 </body>
 </html>

@@ -12,7 +12,6 @@ include 'dbCredentials.php';
 include 'functions.php';
 
 $date = date("Y-m-d");
-$allowNew="yes";
 $validTicketFormat='/[0-9][A-Z]{5,6}\ +[0-9]{10}/';
 $validCleanTicket='/[A-Z]{2,3}\ +[0-9]{8}/';
 
@@ -43,7 +42,7 @@ if(isset($_GET["action"])){
 }
 
 
-if(isset($_GET["source"]) && isset($_GET["ticket"]) && $allowNew == "yes"){
+if(isset($_GET["source"]) && isset($_GET["ticket"])){
 	$ticket = test_input($_GET["ticket"]);
 	$source = test_input($_GET["source"]);
 	if(!preg_match($validTicketFormat, $ticket)){
@@ -57,18 +56,6 @@ if(isset($_GET["source"]) && isset($_GET["ticket"]) && $allowNew == "yes"){
 			while($row = $result->fetch_assoc()) { $duplicate = $row["freightID"]; }
 			echo "The Freight Ticket ".$ticket." appears to exist already: <a href=ticket.php?ticket=".$duplicate."> See here </a>";
 		}else{
-	
-			/*
-			$query = "insert into freight (freightTicket, destination, consignment, contact, date) values ('$ticket', 'Destination', 'Consignment', 'Contact', '$date')";
-			if ($conn->query($query) == TRUE) {
-				#		echo $ticket." Logged Successfully.<br>Or click <a href='ticket.php?ticket='".$ticket."'>here to edit this record</a>";
-				echo $ticket." Logged Successfully.<br>";
-			
-			
-			} else {
-				echo "Problem here boss:". $sql. "<br>". $conn->error;
-			}
-			*/
 			require 'mobile.php';
 		}
 	}

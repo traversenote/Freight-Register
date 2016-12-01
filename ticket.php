@@ -10,9 +10,9 @@ include 'dbCredentials.php';
 include 'functions.php';
 
 if($_GET["ticket"]) {
-    $record = $_GET["ticket"];
+    $record = urldecode($_GET["ticket"]);
 
-    $query = "SELECT * FROM freight WHERE freightID=$record";
+    $query = "SELECT * FROM freight WHERE freightTicket=$record";
     $result = $freightdb->query($query);
     
     while($row = $result->fetch_assoc()) {
@@ -47,7 +47,7 @@ $trackingURL = "http://www.posthaste.co.nz/phl/servlet/ITNG_TAndTServlet?page=1&
 <tr class="titleRow"><td>Destination</td><td>Date</td></tr>
 <tr><td><input type='text' name='destination' value='<?php echo $destination; ?>' size='50'></td><td><?php echo $date; ?></td></tr>
 <tr class="titleRow"><td>Consignment:</td><td>Reference</td></tr>
-<tr><td colspan='2'><?php echo "<textarea rows='15' cols='100' name='consignment'>".$consignment."</textarea>"; ?></td></tr>
+<tr><td colspan='2'><?php echo "<textarea rows='15' cols='150' name='consignment'>".$consignment."</textarea>"; ?></td></tr>
 <tr><td></td><td></td></tr>
 <tr class="titleRow"><td>Reference</td><td>Contact:</td></tr>
 <tr><td><?php echo "<input type='text' size='50' name='reference' value='".$reference."'>"; ?></td><td><input type='text' size='50' name='contact' value='<?php echo $contact; ?>'></td></tr>
