@@ -4,15 +4,15 @@
 <!---This section handles display control information. Display order, etc.--->
     <div id='displayControl'>
         <?php
-        $page = test_input($_GET['page']);
+        $page = stripInput($_GET['page']);
         if($page <= 0){ $page=1; }
-        $displayNum = test_input($_GET['displayNum']);
-        $displayFilter = test_input($_GET['display']);
-        $displayOrder = test_input($_GET['order']);
+        $displayNum = stripInput($_GET['displayNum']);
+        $displayFilter = stripInput($_GET['display']);
+        $displayOrder = stripInput($_GET['order']);
         if(isset($_GET['display'])){
-            $displayNum = test_input($_GET['displayNum']);
-            $displayFilter = test_input($_GET['display']);
-            $displayOrder = test_input($_GET['order']);
+            $displayNum = stripInput($_GET['displayNum']);
+            $displayFilter = stripInput($_GET['display']);
+            $displayOrder = stripInput($_GET['order']);
             switch($displayOrder) {
                 case 'invert':
                     $displayOrder = 'ORDER BY freightID DESC';

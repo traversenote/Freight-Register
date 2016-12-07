@@ -13,7 +13,10 @@ include 'functions.php';
 
 $date = date("Y-m-d");
 $allowNew="yes";
+#ticket format for Post Haste
 $validTicketFormat='/[0-9][A-Z]{5,6}\ +[0-9]{10}/';
+#ticket format for FliWay
+#$fliWayFormat = '/([A-Z]){3}([0-9]){11}/';
 $validCleanTicket='/[A-Z]{2,3}\ +[0-9]{8}/';
 
 if(isset($_GET["action"])){

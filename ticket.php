@@ -12,7 +12,7 @@ include 'functions.php';
 if($_GET["ticket"]) {
     $record = urldecode($_GET["ticket"]);
 
-    $query = "SELECT * FROM freight WHERE freightTicket=$record";
+    $query = "SELECT * FROM freight WHERE freightID=$record";
     $result = $freightdb->query($query);
     
     while($row = $result->fetch_assoc()) {
@@ -24,25 +24,38 @@ if($_GET["ticket"]) {
         $contact = $row["contact"];
         $date = date('d M Y', strtotime($row["date"]));
     }
-$ticketCode = explode(" ", $ticket);
-if (isset($ticketCode[2])) {
-	$ticketCode[1] = $ticketCode[2];
-}
-$trackingURL = "http://www.posthaste.co.nz/phl/servlet/ITNG_TAndTServlet?page=1&Key_Type=Ticket&VCCA=Enabled&product_code=".$ticketCode[0]."&serial_number=".$ticketCode[1];
 
+    $checkedTicket = ticketTest($ticket);
+    switch($checkedTicket[1]){
+    	case 1:
+#    		$ticketCode = explode(" ", $checkedTicket);
+#    		if (isset($ticketCode[2])) {
+#    			$checkedTicket[2][1] = $ticketCode[2];
+#    		}
+    		$trackingURL = "http://www.posthaste.co.nz/phl/servlet/ITNG_TAndTServlet?page=1&Key_Type=Ticket&VCCA=Enabled&product_code=".$checkedTicket[2][0]."&serial_number=".$checkedTicket[2][1];
+    		$fCompany = 'Post Haste';
+    		break;
+    	case 2:
+    		$trackingURL = "http://online.fliway.com/Public/Track/?id=".$checkedTicket[0]."&iframe=false";
+    		$fCompany = 'Fliways';
+    		break;
+    }
+
+#tracking URL for fliwayhttp://online.fliway.com/Public/Track/?id=<NUMBER>&iframe=false
 }else{
 	echo "no get record found";
 }
 
 ?>
 <body>
+
 <div id='topNav'><a href='index.php'>Freight Register Home</a> | <a href='newTicket.php'>New Ticket</a></div>
 <div id='titleBar'>The Listening Post Freight Register</div>
 <div id='mainContent'>
 
 <form action="index.php?action=update&ticket=<?php echo $freightID ?>" method="post">
 <table id="ticket">
-<tr><td>Track and Trace: <a target='_blank' href='<?php echo $trackingURL; ?>'><?php echo $ticketCode[0]." ".$ticketCode[1]; ?></a></td><td>Internal Record Number: <?php echo "<input type='hidden' name='freightID' value='".$freightID."'>".$freightID; ?></td></tr>
+<tr><td>Track and Trace with <?php echo $fCompany; ?>: <a target='_blank' href='<?php echo $trackingURL; ?>'><?php echo $checkedTicket[0]; ?></a></td><td>Internal Record Number: <?php echo "<input type='hidden' name='freightID' value='".$freightID."'>".$freightID; ?></td></tr>
 <tr><td></td><td></td></tr>
 <tr class="titleRow"><td>Destination</td><td>Date</td></tr>
 <tr><td><input type='text' name='destination' value='<?php echo $destination; ?>' size='50'></td><td><?php echo $date; ?></td></tr>

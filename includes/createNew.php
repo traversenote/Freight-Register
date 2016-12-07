@@ -1,10 +1,32 @@
 <?php
-$tType = test_input($_POST["tType"]);
-$tNumber = test_input($_POST["tNumber"]);
-$destination = test_input($_POST["destination"]);
-$consignment = test_input($_POST["consignment"], 500);
-$reference = test_input($_POST["reference"]);
-$ticket = strtoupper($tType)." ".$tNumber;
+
+if(isset($_POST["tType"])){
+	$carrier = 2;
+}else{
+	$carrier=1;
+}
+
+
+switch($carrier){
+	case 1:
+		$tType = stripInput($_POST["tType"]);
+		$tNumber = stripInput($_POST["tNumber"]);
+		$ticket = strtoupper($tType)." ".$tNumber;
+		break;
+	case 2:
+		$ticket = stripInput($_POST["tNumber"]);
+		break;
+}
+
+$checkedTicket = ticketTest($ticket);
+$destination = stripInput($_POST["destination"]);
+$consignment = stripInput($_POST["consignment"], 500);
+$reference = stripInput($_POST["reference"]);
+$contact = stripInput($_POST["contact"]);
+
+
+
+
 /*
  * TODO: Link Repair Ticket
  *
@@ -21,9 +43,9 @@ $ticket = strtoupper($tType)." ".$tNumber;
  * }
  */
 
-if(preg_match($validCleanTicket, $ticket)){
+if($checkedTicket[1] != '0'){
 	$query = "INSERT INTO freight (freightTicket, destination, consignment, reference, contact, date) values ('$ticket', '$destination', '$consignment', '$reference', '$contact', '$date')";
-	echo 'doing the thing';
+	echo 'Success';
 	if ($freightdb->query($query) == TRUE) {
 		$queryMethod = 'display';
 		require 'includes/register.php';

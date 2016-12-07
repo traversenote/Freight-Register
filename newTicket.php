@@ -15,7 +15,7 @@
 
 <form action="index.php?action=createNew" method="post">
 <table id="ticket">
-<tr><td>Ticket Type: <input required type='text' size='3' maxlength='3' name='tType' required> Ticket Number: <input type='text' size='10' maxlength='10' name='tNumber' required></td><td></td></tr>
+<tr><td>Ticket Type: <input type='text' size='3' maxlength='3' name='tType'> Ticket Number: <input type='text' size='12' maxlength='12' name='tNumber' required></td><td></td></tr>
 <tr><td></td><td></td></tr>
 <tr class="titleRow"><td>Destination</td><td>Date</td></tr>
 <tr><td><input required type='text' name='destination' size='50'></td><td><?php echo $date; ?></td></tr>

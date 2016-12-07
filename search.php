@@ -11,8 +11,11 @@
 include 'dbCredentials.php';
 include 'functions.php';
 
-$searchQuery = test_input($_POST['searchQuery']);
-
+if(isset($_POST['searchQuery'])){
+	$searchQuery = stripInput($_POST['searchQuery']);
+}else{
+	$searchQuery = stripInput($_GET['searchQuery']);
+}
 $queryMethod = 'search';
 
 require 'includes/register.php';

@@ -1,16 +1,17 @@
-<?php 
 
-$ticketCode = explode(" ", $cleanTicket);
-if (isset($ticketCode[2])) {
-	$ticketCode[1] = $ticketCode[2];
+<form action='index.php?action=createNew' method='post'>
+<?php
+
+switch($checkedTicket[1]){
+	case 1:
+		echo "<input type='hidden' name='carrier' value='".$checkedTicket[1]."'>\n<input type='hidden' name='tType' value='".$checkedTicket[2][0]."'>\n<input type='hidden' name='tNumber' value='".$checkedTicket[2][1]."'>";
+		break;
+	case 2:
+		echo "<input type='hidden' name='carrier' value='".$checkedTicket[1]."'>\n<input type='hidden' name='tNumber' value='".$checkedTicket[0]."'>";
+		break;
 }
 
 ?>
-
-<form action='index.php?action=createNew' method='post'>
-<!---?><input type='hidden' name='ticket' value='<?php #echo $ticket; ?>'> --->
-<input type='hidden' name='tType' value='<?php echo $ticketCode[0];?>'>
-<input type='hidden' name='tNumber' value='<?php echo $ticketCode[1]; ?>'>
 <div class='mobileTitle'><label for='destination'>Destination</label></div>
 <div><input required class='mobile' type='text' name='destination'></div>
 <div class='mobileTitle'><label for='destination'>Consignment</label></div>

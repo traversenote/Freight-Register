@@ -43,8 +43,8 @@ if(isset($_GET["action"])){
 
 
 if(isset($_GET["source"]) && isset($_GET["ticket"])){
-	$ticket = test_input($_GET["ticket"]);
-	$source = test_input($_GET["source"]);
+	$ticket = stripInput($_GET["ticket"]);
+	$source = stripInput($_GET["source"]);
 	if(!preg_match($validTicketFormat, $ticket)){
 		echo $ticket;
 	}else{
@@ -60,11 +60,11 @@ if(isset($_GET["source"]) && isset($_GET["ticket"])){
 		}
 	}
 }elseif ($_GET["action"]== "update"){
-	$freightID = test_input($_GET["ticket"]);
-	$destination = test_input($_POST["destination"]);
-	$consigment = test_input($_POST["consignment"]);
-	$reference = test_input($_POST["reference"]);
-	$contact = test_input($_POST["contact"]);
+	$freightID = stripInput($_GET["ticket"]);
+	$destination = stripInput($_POST["destination"]);
+	$consigment = stripInput($_POST["consignment"]);
+	$reference = stripInput($_POST["reference"]);
+	$contact = stripInput($_POST["contact"]);
 	
 	$query="update freight set destination='$destination', consignment='$consigment', contact='$contact', reference='$reference' where freightID='$freightID'";
 
@@ -72,11 +72,11 @@ if(isset($_GET["source"]) && isset($_GET["ticket"])){
 		require 'register.php';
 	}	
 }elseif ($_GET["action"] == "createNew"){
-	$tType = test_input($_POST["tType"]);
-	$tNumber = test_input($_POST["tNumber"]);
-	$destination = test_input($_POST["destination"]);
-	$consignment = test_input($_POST["consignment"]);
-	$reference = test_input($_POST["reference"]);
+	$tType = stripInput($_POST["tType"]);
+	$tNumber = stripInput($_POST["tNumber"]);
+	$destination = stripInput($_POST["destination"]);
+	$consignment = stripInput($_POST["consignment"]);
+	$reference = stripInput($_POST["reference"]);
 	$ticket = strtoupper($tType)." ".$tNumber;
 	if(preg_match($validCleanTicket, $ticket)){
 		$query = "INSERT INTO freight (freightTicket, destination, consignment, reference, contact, date) values ('$ticket', '$destination', '$consignment', '$reference', '$contact', '$date')";
