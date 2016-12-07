@@ -44,7 +44,7 @@ $contact = stripInput($_POST["contact"]);
  */
 
 if($checkedTicket[1] != '0'){
-	$query = "INSERT INTO freight (freightTicket, destination, consignment, reference, contact, date) values ('$ticket', '$destination', '$consignment', '$reference', '$contact', '$date')";
+	$query = "INSERT INTO freight (freightTicket, destination, consignment, reference, contact, date) values ('$checkedTicket[0]', '$destination', '$consignment', '$reference', '$contact', '$date')";
 	echo 'Success';
 	if ($freightdb->query($query) == TRUE) {
 		$queryMethod = 'display';
