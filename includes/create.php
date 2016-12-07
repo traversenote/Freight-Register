@@ -23,14 +23,15 @@ if(isset($_GET["source"]) && isset($_GET["ticket"]) && $allowNew == "yes"){
 		$result = $freightdb->query($query);
 	
 		if($result->num_rows >= 1 ){
-			echo "The Freight Ticket ".$ticket." appears to exist already: <a href=ticket.php?ticket='".urlencode($checkedTicket[0])."'> See here </a>";
+			$row = $result->fetch_assoc();
+			echo "<div class='mobileTitle'>The Freight Ticket ".$checkedTicket[0]." appears to exist already: <a href=ticket.php?ticket='".$row["freightID"]."'> See here </a></div>";
 		}elseif($approved != 1){
-			print "You don't seem to have permissions to perform this action.";
+			print "<div class='mobileTitle'>You don't seem to have permissions to perform this action.</div>";
 		}else{
 			require 'mobile.php';
 		}
 	}else{
-		Echo $ticket." doesn't appear to be a valid ticket number.";
+		Echo "<div class='mobileTitle'>".$ticket." doesn't appear to be a valid ticket number.</div>";
 	}
 }
 

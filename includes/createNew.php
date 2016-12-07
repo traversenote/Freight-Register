@@ -1,9 +1,9 @@
 <?php
 
 if(isset($_POST["tType"])){
-	$carrier = 2;
+	$carrier = 1;
 }else{
-	$carrier=1;
+	$carrier=2;
 }
 
 
@@ -48,7 +48,10 @@ if($checkedTicket[1] != '0'){
 	echo 'Success';
 	if ($freightdb->query($query) == TRUE) {
 		$queryMethod = 'display';
-		require 'includes/register.php';
+			require 'includes/register.php';
+		
+		
+		
 	} else {
 		#			echo "Problem here boss:". $sql. "<br>". $conn->error;
 	}

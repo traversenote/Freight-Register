@@ -11,6 +11,8 @@
 include 'dbCredentials.php';
 include 'functions.php';
 
+#URL query should be in the format of /index.php?action=create&ticket=<ticket>&source=<source>
+
 $date = date("Y-m-d");
 $allowNew="yes";
 #ticket format for Post Haste

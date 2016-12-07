@@ -26,7 +26,7 @@ function ticketTest($ticket){
 	$fliWayFormat = '/([A-Z]){3}([0-9]){8}/';
 	
 	if(preg_match($postHasteFormat, $ticket)){
-		$checkedTicket[0] = substr(preg_replace('!\s+!', ' ',$ticket), 4, 11);
+		$checkedTicket[0] = substr(preg_replace('!\s+!', ' ',$ticket), 4, 12);
 		$ticketCode = explode(" ", $ticket);
 		if (isset($ticketCode[2])) {
 			$ticketCode[1] = $ticketCode[2];
