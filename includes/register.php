@@ -1,8 +1,8 @@
-<div id='topNav'><a href='index.php'>Freight Register Home</a> | <a href='newTicket.php'>New Ticket</a></div>
-<div id='titleBar'>The Listening Post Freight Register</div>
-<div id='mainContent'>
+<div class="row" id='topNav'><div class="col-sm-4"></div><div class="col-sm-4"><a href='index.php'>Freight Register Home</a> | <a href='newTicket.php'>New Ticket</a></div><div class="col-sm-4"></div></div>
+<div class="row" id='titleBar'>The Listening Post Freight Register</div>
+<div class="container-fluid" id='mainContent'>
 <!---This section handles display control information. Display order, etc.--->
-    <div id='displayControl'>
+    <div class="row" id='displayControl'>
         <?php
 	        require 'includes/displayOrder.php';
 			$display = displayOrder();
@@ -12,22 +12,32 @@
         <form id='displayFilter' action='<?php print basename($_SERVER['PHP_SELF']); ?>' method='get' onchange='change()'>
         <input type="hidden" name='page' value='<?php print $display["page"]; ?>'>
         <input type="hidden" name='searchQuery' value='<?php print $display["search"]; ?>'>
-        <select name='order'>
-            <option value='normal' <?php print $display["orderNorm"]; ?> >OldestFirst</option>
-            <option value='invert' <?php print $display["orderInv"]; ?> >Newest First</option>
-        </select>
-        <span id='pageDiv'>Page <?php print $display["page"]; ?></span>
-        <button type='submit' name='page' value='<?php print $display["page"] - 1; ?>'>Previous Page</button>
-        <select name='displayNum'>
-            <option value='50' <?php print $display["num50"]; ?> >50</option>
-            <option value='100' <?php print $display["num100"]; ?> >100</option>
-            <option value='200' <?php print $display["num200"]; ?> >200</option>
-        </select>
-        <button type='submit' name='page' value='<?php print $display["page"] + 1; ?>'>Next Page</button>
+        <div class="col-sm-3">
+	        <select class="form-control" name='order'>
+	            <option value='normal' <?php print $display["orderNorm"]; ?> >OldestFirst</option>
+	            <option value='invert' <?php print $display["orderInv"]; ?> >Newest First</option>
+	        </select>
+        </div>
+        <div class="col-sm-2">
+      	  <span id='pageDiv'>Page <?php print $display["page"]; ?></span>
+      	</div>
+        <div class="col-sm-2">	
+	        <button class="btn btn-default" type='submit' name='page' value='<?php print $display["page"] - 1; ?>'>Previous Page</button>
+	        </div>
+	        <div class="col-sm-2">
+	        <select class="form-control" name='displayNum'>
+	            <option value='50' <?php print $display["num50"]; ?> >50</option>
+	            <option value='100' <?php print $display["num100"]; ?> >100</option>
+	            <option value='200' <?php print $display["num200"]; ?> >200</option>
+	        </select>
+	        </div>
+	        <div class="col-sm-2">	
+	        <button class="btn btn-default" type='submit' name='page' value='<?php print $display["page"] + 1; ?>'>Next Page</button>
+        </div>
         </form>
-        <div id='search'>
+        <div class="col-sm-3" id='search'>
             <form action='search.php' method='post'>
-                <input type='text' name='searchQuery' value='<?php print $display["search"]; ?>'><input type='submit' value='Search'>
+                <input type='text' name='searchQuery' value='<?php print $display["search"]; ?>'><input class="btn btn-default" type='submit' value='Search'>
             </form>
         </div>
     </div>

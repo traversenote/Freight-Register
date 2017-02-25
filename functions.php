@@ -18,14 +18,24 @@ function ticketTest($ticket){
 	stripInput($ticket);
 	
 	#ticket format for Post Haste
-	$postHasteFormat='/[0-9][A-Z]{5,6}\ +[0-9]{10}/';
+	$postHasteTicketFormat='/[0-9][A-Z]{5}\ +[0-9]{10}/';
+	$postHasteBagFormat='/[0-9][A-Z]{6}\ +[0-9]{10}/';
+	
 	#clean post haste ticket
 	$postHasteClean='/[A-Z]{2,3}\ +[0-9]{8,10}/';
 	
 	#ticket format for FliWay
 	$fliWayFormat = '/([A-Z]){3}([0-9]){8}/';
 	
-	if(preg_match($postHasteFormat, $ticket)){
+	if(preg_match($postHasteTicketFormat, $ticket)){
+		$checkedTicket[0] = substr(preg_replace('!\s+!', ' ',$ticket), 4, 11);
+		$ticketCode = explode(" ", $ticket);
+		if (isset($ticketCode[2])) {
+			$ticketCode[1] = $ticketCode[2];
+		}		
+		$out = [$checkedTicket[0], '1', $ticketCode];
+		return $out;
+	}elseif(preg_match($postHasteBagFormat, $ticket)){
 		$checkedTicket[0] = substr(preg_replace('!\s+!', ' ',$ticket), 4, 12);
 		$ticketCode = explode(" ", $ticket);
 		if (isset($ticketCode[2])) {
