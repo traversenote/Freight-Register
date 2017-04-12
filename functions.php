@@ -58,5 +58,7 @@ function ticketTest($ticket){
 		return $out;
 	}
 }
-  echo "<script>\nfunction change(){\ndocument.getElementById('displayFilter').submit();\n}\n</script>\n";
-?>
+  echo "<script>\nfunction change(){\ndocument.getElementById('displayFilter').submit();\n}</script>";
+
+  ?>
+

@@ -1,3 +1,4 @@
+
 <?php
 if(isset($_GET["source"]) && isset($_GET["ticket"]) && $allowNew == "yes"){
 	$ticket = stripInput($_GET["ticket"]);
@@ -31,8 +32,10 @@ if(isset($_GET["source"]) && isset($_GET["ticket"]) && $allowNew == "yes"){
 			require 'mobile.php';
 		}
 	}else{
-		Echo "<div class='mobileTitle'>".$ticket." doesn't appear to be a valid ticket number.</div>";
+		echo "<div class='mobileTitle'>".$ticket." doesn't appear to be a valid ticket number.</div>";
 	}
+}else{
+ require 'includes/register.php';
 }
 
 ?>
