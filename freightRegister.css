@@ -9,51 +9,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-table#freightRegister{
-    table-layout: fixed;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-table#freightRegister th, td {
-    
-}
-#freightRegister{
-    width:100%; 
-    border-collapse:collapse; 
-}
-#freightRegister td { 
-    padding:7px; 
-/*    border:#4e95f4 1px solid; */
-    border-bottom: 1px solid #ddd;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-}
-#freightRegister td a{
-    display: block;
-    text-decoration: none;
-}
-/* Define the default color for all the table rows */
-
-/* Define the hover highlight color for the table row */
-#freightRegister tr:hover {
-    background-color: #ffff99;
-}
-
-.titleRow{
-    background-color: #ff99aa;
-    align: center;
-	padding: 5px;
-	margin: 5px;
-    }
-.inputRow{
-        padding:5px;
-        margin:5px;
-}
-    
 #topNav {
     background-color: #ff99aa;
     text-align: center;
@@ -63,69 +18,36 @@ table#freightRegister th, td {
     text-align: center;
     font-size: 30px;
 }
+.titleRow{
+	border-bottom: thin solid #ff99aa;
+    align: center;
+	padding: 5px;
+	margin: 5px;
+}
+.inputRow{
+        padding:5px;
+        margin:5px;
+}
+
 #search {
 }
-
+#footNav{	
+	padding: 10px 0 0 10px;
+}
 #mainContent{
- #   margin: auto;
- #   width: 75%;
- #   border: solid;
-  #  padding: 10px;
-}
-
-#footNav{
-    display: table;
-    margin: auto;
-    width: 75%;
-    height: 20px;
-    border: solid;
-    padding: 10px;
-}
-
-.navCell{
-        float:left;/*fix for  buggy browsers*/
-        width:33.3%;
-}
-#navInner{
-    width: 85%;
-    margin: auto;
-}
-
-table.newRepairTable {
-    width: 50%;
-    border:1px;
-}
-
-#ticket {
-    width: 85%;
-    margin: auto;
+	background:white;
+	padding: 10px 0 0 10px;
 }
 #displayFilter {
     display: inline;
-    float: left;
     width: 65%;
-
 }
 #displayControl {
     height: 40px;
+    
 }
-
-#freightHeader {
-    height:250px;
-}
-
-#completeButton {
-    float: right;
-    width: 33.3%;
-}
-#editButton {
-    float: left;
-    width: 33.3%;
-}
-#pageDiv {
-    width: 10%;
-    margin-right: 5%;
-    margin-left: 5%;
+.seeIt{
+	border: 1px solid black;
 }
 .mobileTitle{
 	width: 100%;
@@ -155,7 +77,6 @@ textarea.mobile {
   border-bottom: 2px solid #CCCCCC;
   border-left: 2px solid #CCCCCC;
 }
-
 .regRows {
 	padding:5px 5px 5px 5px;
 	margin: 0px 5px 0px 5px;
@@ -165,16 +86,10 @@ textarea.mobile {
 	display: block;
     background-color: #ffff99;
 }
-
 .regCol{
     white-space:nowrap;
 	overflow:hidden;
 }
-
-#repairRef{
-	display:none;
-}
-
 
 
 

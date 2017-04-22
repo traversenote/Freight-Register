@@ -20,9 +20,22 @@
 
 <body>
 <div class="container-fluid">
-<div class="panel row" id='topNav'>
-	<a href='index.php' class='fakeButton'>Freight Register Home</a><a href='index.php?action=newTicket' class='fakeButton'>New Ticket</a>
-</div>
+	<div class="navbar" id='topNav'>
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li><a href='index.php' class='fakeButton'>Freight Register Home</a></li>
+				<li><a href='index.php?action=newTicket' class='fakeButton'>New Ticket</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<li>
+					<form action="search.php" class="navbar-form navbar-right" method="post">
+                        <input type='text' class="form-control" name='searchQuery' value=''>
+	        			<input class="btn btn-default" type='submit' value='Search'>
+	        		</form>
+	        	</li>
+			</ul>
+		</div>
+	</div>
 <?php
 include 'dbCredentials.php';
 include 'functions.php';
@@ -63,7 +76,10 @@ if(isset($_GET["action"])){
 	require 'includes/register.php';
 }
 
-?>
+?>	<div class="container panel" id='footNav'>
+	 <span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> The Listening Post - Contact jason@listeningpost.co.nz for any issues.
+	</div>
 </div>
+
 </body>
 </html>

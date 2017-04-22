@@ -9,7 +9,7 @@
 		?>
 <!--- Displays the Choosers for display priority --->
 
-        <form id='displayFilter' class='form-group' action='<?php print basename($_SERVER['PHP_SELF']); ?>' method='get' onchange='change()'>
+        <form id='displayFilter' class='form-inline' action='<?php print basename($_SERVER['PHP_SELF']); ?>' method='get' onchange='change()'>
         	<input type="hidden" name='page' value='<?php print $display["page"]; ?>'>
         	<input type="hidden" name='searchQuery' value='<?php print $display["search"]; ?>'>
         <div class="col-md-3">
@@ -18,33 +18,18 @@
 	            <option value='invert' <?php print $display["orderInv"]; ?> >Newest First</option>
 	        </select>
         </div>
-        <div class="col-md-2">
-      	  <span id='pageDiv'>Page <?php print $display["page"]; ?></span>
-      	</div>
-        <div class="col-md-2">	
+        <div class="col-md-2"><p>Page <?php print $display["page"]; ?></p></div>
+        <div class="col-md-4 col-md-offset-3">
 	        <button class="btn btn-default" type='submit' name='page' value='<?php print $display["page"] - 1; ?>'>Previous Page</button>
-	        </div>
-	        <div class="col-md-2">
-		        <select class="form-control" name='displayNum'>
-		            <option value='50' <?php print $display["num50"]; ?> >50</option>
-		            <option value='100' <?php print $display["num100"]; ?> >100</option>
-		            <option value='200' <?php print $display["num200"]; ?> >200</option>
-		        </select>
-	        </div>
-	        <div class="col-md-2">	
-	        	<button class="btn btn-default" type='submit' name='page' value='<?php print $display["page"] + 1; ?>'>Next Page</button>
-        	</div>
+	        <select class="form-control" name='displayNum'>
+	            <option value='50' <?php print $display["num50"]; ?> >50</option>
+	            <option value='100' <?php print $display["num100"]; ?> >100</option>
+	            <option value='200' <?php print $display["num200"]; ?> >200</option>
+	        </select>
+        	<button class="btn btn-default" type='submit' name='page' value='<?php print $display["page"] + 1; ?>'>Next Page</button>
+		</div>
         </form>
-        <div class="col-md-4" id='search'>
-            <form action='search.php' class="form-group" method='post'>
-			<div class="col-md-6">
-                <input type='text' class="form-control" name='searchQuery' value=''>
-			</div>
-			<div class="col-md-4">
-				<input class="btn btn-default" type='submit' value='Search'>
-			</div>
-            </form>
-        </div>
+
     </div>
     
 <!--- Displays the selected records --->
