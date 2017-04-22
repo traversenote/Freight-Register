@@ -21,11 +21,13 @@ function ticketTest($ticket){
 	$postHasteTicketFormat='/[0-9][A-Z]{5}\ +[0-9]{10}/';
 	$postHasteBagFormat='/[0-9][A-Z]{6}\ +[0-9]{10}/';
 	
+	#ticket format for FliWay
+	$fliWayFormat = '/([A-Z]){3}([0-9]){8}/';
+	
 	#clean post haste ticket
 	$postHasteClean='/[A-Z]{2,3}\ +[0-9]{8,10}/';
 	
-	#ticket format for FliWay
-	$fliWayFormat = '/([A-Z]){3}([0-9]){8}/';
+
 	
 	if(preg_match($postHasteTicketFormat, $ticket)){
 		$checkedTicket[0] = substr(preg_replace('!\s+!', ' ',$ticket), 4, 11);
