@@ -52,9 +52,9 @@ $validCleanTicket='/[A-Z]{2,3}\ +[0-9]{8}/';
 
 if(isset($_GET["action"])){
 	switch($_GET["action"]){
-                case 'display':
-                        require 'includes/ticket.php';
-                        break;
+        case 'display':
+            require 'includes/ticket.php';
+        	break;
 		case 'newTicket':
 			require 'includes/newTicket.php';
 			break;

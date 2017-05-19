@@ -39,6 +39,7 @@ if($_GET["ticket"]) {
 }
 
 ?>
+
 <div class="panel" id='titleBar'><?php echo $fCompany; ?>: <a target='_blank' href='<?php echo $trackingURL; ?>'><?php echo $checkedTicket[0]; ?></a></div>
 <div class="container"  id='mainContent'>
 <div class='row'>
@@ -65,8 +66,8 @@ if($_GET["ticket"]) {
             <div class='col-md-5 titleRow'>Contact:</div>
         </div>
 		<div class='row'>
-            <div class='col-md-5 inputRow'><input class="form-control" type="text" name="reference" value="<?php $reference; ?>"></div>
-		    <div class='col-md-5 inputRow'><input class="form-control" type="text" name="contact" value="<?php $contact; ?>"></div>
+            <div class='col-md-5 inputRow'><input class="form-control" type="text" name="reference" value="<?php echo $reference; ?>"></div>
+		    <div class='col-md-5 inputRow'><input class="form-control" type="text" name="contact" value="<?php echo $contact; ?>"></div>
 		</div>
 			<p><label for="freightID">Internal Record Number:</label>
 			<?php echo "<input type='hidden' name='freightID' value='".$freightID."'>".$freightID; ?></p>
