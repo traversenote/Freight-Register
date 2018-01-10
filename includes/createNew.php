@@ -21,8 +21,11 @@ switch($carrier){
 $checkedTicket = ticketTest($ticket);
 $destination = stripInput($_POST["destination"]);
 $consignment = stripInput($_POST["consignment"], 500);
+//$isRepair = stripInput($_POST["repairCheck"]);
 $reference = stripInput($_POST["reference"]);
 $contact = stripInput($_POST["contact"]);
+
+
 
 if($checkedTicket[1] != '0'){
 	$query = "INSERT INTO freight (freightTicket, destination, consignment, reference, contact, date) values ('$checkedTicket[0]', '$destination', '$consignment', '$reference', '$contact', '$date')";
@@ -30,6 +33,9 @@ if($checkedTicket[1] != '0'){
 	if ($freightdb->query($query) == TRUE) {
 		$queryMethod = 'display';
 			require 'includes/register.php';
+		
+		
+		
 	} else {
 		#			echo "Problem here boss:". $sql. "<br>". $conn->error;
 	}

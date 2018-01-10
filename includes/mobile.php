@@ -14,7 +14,7 @@
 
         ?>
         <div class='row'>
-            <div class='col-md-5 col-xs-12 titleRow'><label for='destination'>Destination</label></div>
+            <div class='col-md-5 col-xs-12 titleRow titleRow'><label for='destination'>Destination</label></div>
         </div>
         <div class='row'>
             <div class='col-md-5 col-xs-12'><input required class='form-control' type='text' name='destination'></div>
@@ -27,10 +27,10 @@
         </div>
         <div class='row form-inline'>
             <div class='col-md-2 col-xs-5 titleRow'><label for='reference'>Reference</label></div>
-            <!--<div class='col-md-3 col-xs-6 titleRow'><label> This is a repair <input required id='repairCheck' class='checkbox' type='checkbox'></label>&nbsp;</div> -->
+            <div class='col-md-3 col-xs-6 titleRow'><label> <!--This is a repair <input required id='repairCheck' class='checkbox' type='checkbox'></label> -->&nbsp;</div>
         </div>
         	<div class='row'>
-            	<div class='col-md-5 col-xs-12'><input required class='form-control' type='text' name='Reference' placeholder='Reference'></div>
+            	<div class='col-md-5 col-xs-12'><input required class='form-control' type='text' name='reference' placeholder='Reference'></div>
 <!--             	<div class='col-md-5 col-xs-12' id='nonRepair'><input required class='form-control' type='text' name='reference' placeholder='Reference'></div> -->
 			</div>
         <div class='row'>

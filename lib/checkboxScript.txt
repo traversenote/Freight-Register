@@ -1,0 +1,14 @@
+#Script to hide and unhide a dropdown using a checkbox for the Ticket Creation Page
+<script>
+$(document).ready(function() {
+    $('#repairCheck').change(function(){
+        if (this.checked) {
+            $('#nonRepair').css('display', 'none');
+            $('#repairRef').fadeIn('slow');
+        }else {
+            $('#repairRef').css('display', 'none')
+            $('#nonRepair').fadeIn('slow');
+        }                   
+    });
+});
+</script>
