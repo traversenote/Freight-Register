@@ -14,8 +14,7 @@
 <script type='text/javascript' src='//code.jquery.com/ui/1.11.4/jquery-ui.min.js?ver=4.5.2'></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv='content-type' content='text/html; charset=utf-8'>
-<link rel='stylesheet' href='../style.css' />
-<link rel='stylesheet' href='freightRegister.css' />
+<link rel='stylesheet' href='../../style.css' />
 <title>Freight Codes</title>
 </head>
 
@@ -43,23 +42,3 @@
 			</ul>
 		</div>
 	</div>
-<?php
-include '../local/dbCredentials.php';
-include 'functions.php';
-
-if(isset($_POST['searchQuery'])){
-	$searchQuery = stripInput($_POST['searchQuery']);
-}else{
-	$searchQuery = stripInput($_GET['searchQuery']);
-}
-$queryMethod = 'search';
-
-require 'includes/register.php';
-include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php';
-
-?>
-
-</div>
-
-</body>
-</html>

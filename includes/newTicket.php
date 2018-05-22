@@ -4,7 +4,7 @@
 <div class='row'>
 <div class='col-md-10 col-md-offset-2'>
 
-    <!--- Grabs the current date to stamp the new freight Ticket --->
+    <!-- Grabs the current date to stamp the new freight Ticket -->
     <?php $date = date('d M Y', strtotime(date("Y-m-d")));?>
 
     <form class='form-group' action="index.php?action=upload" method="post">

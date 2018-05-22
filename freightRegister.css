@@ -1,42 +1,12 @@
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 80px;
-    background-color: #F5F5F5;
-    font-family: 'Roboto', sans-serif;
-}
-
-#topNav {
-    background-color: #99ccff;
-    text-align: center;
-	padding: 10px;
-}
-#titleBar {
-    text-align: center;
-    font-size: 30px;
-}
 .titleRow{
-	border-bottom: thin solid #99ccff;
+  border-bottom: thin solid #99ccff;
     align: center;
-	padding: 5px;
-	margin: 5px;
+  padding: 5px;
+  margin: 5px;
 }
 .inputRow{
         padding:5px;
         margin:5px;
-}
-
-#search {
-}
-#footNav{	
-	padding: 10px 0 0 10px;
-}
-#mainContent{
-	background:white;
-	padding: 10px 0 0 10px;
 }
 #displayFilter {
     display: inline;
@@ -44,52 +14,20 @@ body {
 }
 #displayControl {
     height: 40px;
-    
 }
 .seeIt{
-	border: 1px solid black;
-}
-.mobileTitle{
-	width: 100%;
-	font-size:75px;
-	font-weight: bold;
-	background-color: #99ccff;
-}
-input.mobile {
-	height: 1.5em;
-	width: 10em;
-	font-size:5em;
-}
-textarea.mobile {
-	height: 3em;
-	width: 13.5em;
-	font-size:5em;
-}
-
-.fakeButton {
-  text-decoration: none;
-  margin: 1px;
-  background: #ffffff;
-  padding: 8px 24px 8px 24px;
-  border-radius: 5px;
-  border-top: 2px solid #CCCCCC;
-  border-right: 2px solid #CCCCCC;
-  border-bottom: 2px solid #CCCCCC;
-  border-left: 2px solid #CCCCCC;
+  border: 1px solid black;
 }
 .regRows {
-	padding:5px 5px 5px 5px;
-	margin: 0px 5px 0px 5px;
-	border-bottom: 1px solid #e5e5e5;
+  padding:5px 5px 5px 5px;
+  margin: 0px 5px 0px 5px;
+  border-bottom: 1px solid #e5e5e5;
 }
 .regRows:hover{
-	display: block;
+  display: block;
     background-color: #ffff99;
 }
 .regCol{
     white-space:nowrap;
-	overflow:hidden;
+  overflow:hidden;
 }
-
-
-

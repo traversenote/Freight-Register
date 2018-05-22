@@ -1,13 +1,13 @@
 <div class="panel" id='titleBar'>The Listening Post Freight Register</div>
 
 <div class="container" id='mainContent'>
-<!---This section handles display control information. Display order, etc.--->
+<!-- This section handles display control information. Display order, etc.-->
     <div class="row" id='displayControl'>
         <?php
 	        require 'includes/displayOrder.php';
 			$display = displayOrder();
 		?>
-<!--- Displays the Choosers for display priority --->
+<!-- Displays the Choosers for display priority -->
 
         <form id='displayFilter' class='form-inline' action='<?php print basename($_SERVER['PHP_SELF']); ?>' method='get' onchange='change()'>
         	<input type="hidden" name='page' value='<?php print $display["page"]; ?>'>
@@ -32,7 +32,7 @@
 
     </div>
     
-<!--- Displays the selected records --->
+<!-- Displays the selected records -->
 <div class='container'>
 
         <div class='row titleRow'>

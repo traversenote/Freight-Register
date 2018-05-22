@@ -33,7 +33,7 @@ if($_GET["ticket"]) {
     		break;
     }
 
-#tracking URL for fliwayhttp://online.fliway.com/Public/Track/?id=<NUMBER>&iframe=false
+#tracking URL for fliway http://online.fliway.com/Public/Track/?id=<NUMBER>&iframe=false
 }else{
 	echo "no get record found";
 }

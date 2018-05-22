@@ -14,12 +14,22 @@
 <script type='text/javascript' src='//code.jquery.com/ui/1.11.4/jquery-ui.min.js?ver=4.5.2'></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+
+<!-- Main Style -->
+<link rel='stylesheet' href='../style.css' />
 <link rel='stylesheet' href='freightRegister.css' />
+
 <title>Freight Codes</title>
 </head>
 
 <body>
 <div class="container-fluid">
+	<script>
+		$(document).data('nPage', 'freight');
+	</script>
+	<?php
+    include '../includes/mainNav.php';
+	?>
 	<div class="navbar" id='topNav'>
 		<div class="container">
 			<ul class="nav navbar-nav">
@@ -37,7 +47,7 @@
 		</div>
 	</div>
 <?php
-include 'dbCredentials.php';
+include '../local/dbCredentials.php';
 include 'functions.php';
 
 #URL query should be in the format of /index.php?action=create&ticket=<ticket>&source=<source>
@@ -76,9 +86,8 @@ if(isset($_GET["action"])){
 	require 'includes/register.php';
 }
 
-?>	<div class="container panel" id='footNav'>
-	 <span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> The Listening Post - Contact jason@listeningpost.co.nz for any issues.
-	</div>
+	include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php';
+?>
 </div>
 
 </body>
